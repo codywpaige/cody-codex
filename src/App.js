@@ -8,7 +8,6 @@ function App() {
   const [text, setText] = React.useState([]);
   const [codex, setCodex] = React.useState();
   const [textTwo, setTextTwo] = React.useState([]);
-  const [loading, setLoading] =  React.useState(true);
 
   // update state value for input
   const onChangeL = (event) => {
@@ -40,7 +39,6 @@ function App() {
     console.log(data.choices[0].text);
     setCodex(data.choices[0].text)
     })
-  setLoading(false);
 }
 
     const myComponentStyle = {
