@@ -83,6 +83,8 @@ function RenderedResponse() {
     <div>
       <body>
         <div className="paragraph-text">
+          <h3>The Cody-Codex</h3>
+          <p>Essentially, you can provide any amount (small or large) of text as a writer, and the second box is where you give instructions to AI in regards to the direction, tone, wordiness, length, content etc. and it will output a piece of work for you!</p>
           <p style={myComponentStyle}>Provided Sample</p>
           <TextField style={myComponentStyleTwo} value={text} name="Sample" onChange={e => onChangeL(e.target.value)} />
           <br></br>
