@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background-color: #EAFFFD;
+}
+
+body > div.box-styling {
+  background-color: white;
+}
+
+.box-styling {
+  display: flex;
+  border: 1px solid black;
+  flex-direction: column;
+}
