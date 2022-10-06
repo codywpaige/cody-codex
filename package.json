@@ -1,6 +1,5 @@
 {
   "name": "cody-codex",
-  "homepage": "http://codywpaige.github.io/cody-codex",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
