@@ -2,12 +2,21 @@ import './styles.css';
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button';
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 function RenderedResponse() {
   // create a usestate var called test that captures the value of the input wtext
   const [text, setText] = React.useState([]);
   const [codex, setCodex] = React.useState();
   const [textTwo, setTextTwo] = React.useState([]);
+  const [todoId, setTodoId] = useState(1);
+  const [todo, setTodo] = useState("");
+  const [loading, setLoading] = useState(false);
+  
+  function getNewTodo() {
+    setTodoId((todoId) => (todoId === 20 ? 1 : todoId + 1));
+  }
 
   // update state value for input
   const onChangeL = (event) => {
@@ -20,13 +29,29 @@ function RenderedResponse() {
     console.log(event);
   };
 
+  useEffect(() => {
+    async function fetchTodo() {
+      const url = `/.netlify/functions/todo?id=${todoId}`;
+      try {
+        setLoading(true);
+        const todo = await fetch(url).then((res) => res.json());
+        setTodo(todo.title);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchTodo();
+  }, [todoId]);
+
 
   let submitCodexCall = () => {
     fetch('https://api.openai.com/v1/edits', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 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'
+        'Authorization': `Bearer ${process.env.REACT_APP_FIRST_SECRET}`,
       },
       body: JSON.stringify({
         'model': 'text-davinci-edit-001',
