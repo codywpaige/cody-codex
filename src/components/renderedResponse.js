@@ -1,9 +1,9 @@
-import './App.css';
+import './styles.css';
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button';
 import React from 'react';
 
-function App() {
+function RenderedResponse() {
   // create a usestate var called test that captures the value of the input wtext
   const [text, setText] = React.useState([]);
   const [codex, setCodex] = React.useState();
@@ -26,7 +26,7 @@ function App() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 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'
+        'Authorization': 'Bearer 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'
       },
       body: JSON.stringify({
         'model': 'text-davinci-edit-001',
@@ -85,4 +85,4 @@ function App() {
   );
 }
 
-export default App;
+export default RenderedResponse;

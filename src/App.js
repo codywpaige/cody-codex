@@ -1,13 +1,21 @@
 import {Routes ,Route} from 'react-router-dom';
-import { RenderResult } from 'src/components/renderedResponse';
+// import the component renderedResponse.js
+import RenderedResponse from './components/renderedResponse';
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-function App() {
-  return (
-   <div>
-     <Routes >
-       <Route exact path='/' element={<RenderResult />} />
-       <Route exact path='/rendered-result' element={<RenderResult/>} />
-     </Routes >
-   </div>
+let App = () => {
+  const rootElement = document.getElementById("root");
+  const root = createRoot(rootElement);
+
+  root.render(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/renderedresponse" element={<RenderedResponse />}></Route>
+        <Route path="/" element={<RenderedResponse />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
+
+export default App;
