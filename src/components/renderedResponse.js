@@ -54,7 +54,7 @@ function RenderedResponse() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+        'Authorization': `Bearer ${process.env.REACT_APP_FIRST_SECRET}`,
       },
       body: JSON.stringify({
         'model': 'text-davinci-edit-001',
