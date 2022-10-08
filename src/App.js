@@ -14,6 +14,7 @@ let App = () => {
   root.render(
     <HashRouter>
       <Routes>
+        <Route exact path="/explain-like-five" component={CompletionsResponse} />
         <Route path="/explain-like-five" element={<CompletionsResponse/>}></Route>
         <Route path="/content-writer" element={<RenderedResponse/>}></Route>
         <Route path="/" element={randomElement}></Route>
