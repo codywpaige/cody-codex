@@ -6,8 +6,11 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { TextareaAutosize } from '@mui/material';
 import ButtonAppBar from './ButtonAppBar';
+import { useNavigate } from 'react-router-dom';
 
 function RenderedResponse() {
+  const navigate = useNavigate();
+
   // create a usestate var called test that captures the value of the input wtext
   const [text, setText] = React.useState([]);
   const [codex, setCodex] = React.useState();
@@ -15,6 +18,20 @@ function RenderedResponse() {
   const [todoId, setTodoId] = useState(1);
   const [todo, setTodo] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const navToWriter = () => {
+    // if the current route matches the explain-like-five route, then render the renderedResponse component
+    if (window.location.href === "http://main--charming-gelato-34ef5b.netlify.app/content-writer") {
+        // navigate to the writer page by rendering its component
+        // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
+        navigate("/explain-like-five");
+    } 
+    if (window.location.href === "http://main--charming-gelato-34ef5b.netlify.app/explain-like-five") {
+        // navigate to the writer page by rendering its component
+        // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
+        navigate("/content-writer");
+    }
+}
   
   function getNewTodo() {
     setTodoId((todoId) => (todoId === 20 ? 1 : todoId + 1));
@@ -115,7 +132,7 @@ function RenderedResponse() {
   return (
     <div>
       <body>
-      <ButtonAppBar />
+      <ButtonAppBar onClick={navToWriter} />
         <div className="paragraph-text">
           <h3 style={myComponentStyleFive}>Writers: Generate Content</h3>
           <p style={myComponentStyleFour}>Essentially, you can provide any amount (small or large) of text as a writer, and the second box is where you give instructions to AI in regards to the direction, tone, wordiness, length, content etc. and it will output a piece of work for you!</p>

@@ -18,7 +18,7 @@ let CompletionsResponse = () => {
             // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
             navigate("/explain-like-five");
         } 
-        if (window.location.href === "http://localhost:3000/explain-like-five") {
+        if (window.location.href === "http://main--charming-gelato-34ef5b.netlify.app/explain-like-five") {
             // navigate to the writer page by rendering its component
             // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
             navigate("/content-writer");
