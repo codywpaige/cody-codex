@@ -79,6 +79,7 @@ function RenderedResponse() {
   const myComponentStyleTwo = {
     'background-color': 'white',
     'height': '50px',
+    'width': '25%',
   }
 
   const myComponentStyleThree = {
@@ -106,6 +107,7 @@ function RenderedResponse() {
   const myComponentStyleSix = {
     'padding-bottom': '25px',
     'height': '50px',
+    'width': '100%',
   }
 
   return (
