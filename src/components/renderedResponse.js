@@ -93,7 +93,8 @@ function RenderedResponse() {
     'color': 'black',
     'font-size': '25px',
     'padding-left': '35px',
-    'padding-right': '25px'
+    'padding-right': '25px',
+    'text-align': 'center',
   }
 
   const myComponentStyleFive = {
