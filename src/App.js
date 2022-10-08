@@ -14,7 +14,7 @@ let App = () => {
       <Routes>
         <Route path="/completions-response" element={<CompletionsResponse />}></Route>
         <Route path="/rendered-response" element={<RenderedResponse />}></Route>
-        <Route path="/" element={<RenderedResponse />}></Route>
+        <Route path="/" element={<CompletionsResponse />}></Route>
       </Routes>
     </BrowserRouter>
   );
