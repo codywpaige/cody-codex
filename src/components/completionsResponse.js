@@ -13,15 +13,15 @@ let CompletionsResponse = () => {
 
     const navToWriter = () => {
         // if the current route matches the explain-like-five route, then render the renderedResponse component
+        if (window.location.href === "https://main--charming-gelato-34ef5b.netlify.app/explain-like-five") {
+            // navigate to the writer page by rendering its component
+            // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
+            navigate("/content-writer");
+        } 
         if (window.location.href === "http://main--charming-gelato-34ef5b.netlify.app/content-writer") {
             // navigate to the writer page by rendering its component
             // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
             navigate("/explain-like-five");
-        } 
-        if (window.location.href === "http://main--charming-gelato-34ef5b.netlify.app/explain-like-five") {
-            // navigate to the writer page by rendering its component
-            // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
-            navigate("/content-writer");
         }
     }
 
