@@ -3,6 +3,7 @@ import {Routes ,Route} from 'react-router-dom';
 import RenderedResponse from './components/renderedResponse';
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import CompletionsResponse from './components/completionsResponse';
 
 let App = () => {
   const rootElement = document.getElementById("root");
@@ -11,7 +12,8 @@ let App = () => {
   root.render(
     <BrowserRouter>
       <Routes>
-        <Route path="/renderedresponse" element={<RenderedResponse />}></Route>
+        <Route path="/completions-response" element={<CompletionsResponse />}></Route>
+        <Route path="/rendered-response" element={<RenderedResponse />}></Route>
         <Route path="/" element={<RenderedResponse />}></Route>
       </Routes>
     </BrowserRouter>
