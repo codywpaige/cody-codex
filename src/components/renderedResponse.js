@@ -99,7 +99,8 @@ function RenderedResponse() {
     'color': 'black',
     'font-size': '45px',
     'font-weight': 'bold',
-    'border': '1.4px solid black'
+    'border': '1.4px solid black',
+    'background-color': 'white',
   }
   
   const myComponentStyleSix = {
