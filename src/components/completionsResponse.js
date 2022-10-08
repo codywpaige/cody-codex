@@ -5,6 +5,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { TextareaAutosize } from '@mui/material';
+import ButtonAppBar from './ButtonAppBar';
 
 let CompletionsResponse = () => {
 
@@ -24,6 +25,11 @@ let CompletionsResponse = () => {
         console.log(event);
     };
 
+      const styledButtonTwo = {
+    'text-decoration': 'bold',
+    'font-size': '20px',
+  }
+
     const myComponentStyleFour = {
         'color': 'black',
         'font-size': '25px',
@@ -36,7 +42,6 @@ let CompletionsResponse = () => {
         'color': 'black',
         'font-size': '45px',
         'font-weight': 'bold',
-        'border': '1.4px solid black',
         'background-color': 'white',
     }
 
@@ -91,6 +96,7 @@ let CompletionsResponse = () => {
 
     return (
         <div className='pink'>
+        <ButtonAppBar />
             <div style={myComponentStyleSeven} className='pink'>
                 <div className="paragraph-text">
                     <h3 style={myComponentStyleFive}>Explain To Me Like I'm Five</h3>

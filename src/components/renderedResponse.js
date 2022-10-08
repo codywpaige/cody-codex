@@ -5,6 +5,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { TextareaAutosize } from '@mui/material';
+import ButtonAppBar from './ButtonAppBar';
 
 function RenderedResponse() {
   // create a usestate var called test that captures the value of the input wtext
@@ -114,8 +115,9 @@ function RenderedResponse() {
   return (
     <div>
       <body>
+      <ButtonAppBar />
         <div className="paragraph-text">
-          <h3 style={myComponentStyleFive}>The Cody-Codex</h3>
+          <h3 style={myComponentStyleFive}>Writers: Generate Content</h3>
           <p style={myComponentStyleFour}>Essentially, you can provide any amount (small or large) of text as a writer, and the second box is where you give instructions to AI in regards to the direction, tone, wordiness, length, content etc. and it will output a piece of work for you!</p>
           <TextareaAutosize placeholder="Provided Sample" style={myComponentStyleTwo} value={text} name="Sample" onChange={e => onChangeL(e.target.value)} />
           <br></br>

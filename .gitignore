@@ -1,13 +1,4 @@
 # Local Netlify folder
 .netlify
 # git ignore anything with node modules *
-node_modules
-# git ignore anything with .cache *
-.cache
-# git ignore anything with .cache *
-public
-# git ignore anything with .cache *
-package-lock.json
-# git ignore anything with .cache *
-yarn.lock
-# git ignore anything with .cache *
+*node_modules/*

@@ -21,3 +21,7 @@ let App = () => {
 };
 
 export default App;
+
+// npm install globally yarn
+
+// yarn install

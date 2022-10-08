@@ -25,7 +25,32 @@
 
   .parent {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    font-size: 28px;
+  }
+
+  #root > div > div.MuiBox-root.css-i9gxme > header > div > div > div {
+    background-color: orangered !important;
+    color: white;
+    margin: 5px;
+    /* border: 2px solid black; */
+  }
+
+  #mui-component-select-agent {
+    background-color: orangered !important;
+    color: white;
+    margin: 5px;
+    padding-left: 15px;
+    /* border: 2px solid black; */
+  }
+
+  body > div.MuiBox-root.css-i9gxme > header > div > div > div {
+    font-size: 20px;
+    background-color: orangered !important;
+    margin-left: 5px;
+    margin-bottom: 7px;
   }

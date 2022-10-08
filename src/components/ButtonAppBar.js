@@ -8,20 +8,50 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function ButtonAppBar() {
+
+  // set state hook for the usefeffect
+  const [drop, setDrop] = useState(1);
+
+  useEffect(() => {
+    var currentSlugs = window.location.href;
+    let dropDownTitle = window.location.href.includes("content-writer") ? "Writers: Generate Content" : "Explain to me like I am 5";
+    setDrop(dropDownTitle);
+    console.log(dropDownTitle);
+   }, []);
+
   const [values, setValues] = React.useState([
-    "Explain to me like I am 5",
     "Writers: Generate Content",
+    "Explain to me like I am 5",
   ])
   const [selected, setSelected] = useState("Explain to me like I am 5");
 
-  const myComponentStyle = {
-    'color': 'white !important',
+  const styledButton = {
+    'text-decoration': 'bold',
+    'font-size': '20px',
   }
+
+  const styledButtonTwo = {
+    'text-decoration': 'bold',
+    'font-size': '20px',
+  }
+
+  const flexClass = {
+    'display': 'flex',
+    'justify-content': 'space-between',
+    'align-items': 'center',
+    'padding-bottom': '15px',
+  }
+
+  // if content is in the url then set a new var called dropDownTitle
+  // to the content of the url
+  // if not then set it to the default value of "Explain to me like I am 5"
 
   // create a function called navToWriter that will navigate to the writer page
   const navToWriter = () => {
+    // get the current slug, and create a variable to save it to
     // if the current url contains the string explain, then navigate to the writer page
     if (window.location.href.includes("explain")) {
     window.location.href = "/content-writer";
@@ -38,19 +68,27 @@ export default function ButtonAppBar() {
             <br></br>
             <Select
               value={selected}
+              style={styledButtonTwo}
               inputProps={{
                 name: "agent",
                 id: "age-simple"
               }}
             >
               {values.map((value, index) => {
-                return <MenuItem onClick={navToWriter} style={myComponentStyle} value={value}>{value}</MenuItem>;
-              })}
+                return <MenuItem style={styledButton} onClick={navToWriter} value="Drop Down">{value}</MenuItem>;
+              }
+              )}
             </Select>
           </div>
+          <div className='parent' style={flexClass}>
+          {"Cody's Compendium of Codexes"}
+          </div>
         </Typography>
-        <Button color="inherit"></Button>
       </AppBar>
     </Box>
   );
 }
+
+
+
+
