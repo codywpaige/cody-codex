@@ -125,7 +125,7 @@ function RenderedResponse() {
         <div className='parent'>
         <div className='child'>
         <br></br>
-        <TextareaAutosize value={codex} placeholder4={codex} style={myComponentStyleSix} name="Instructions" onChange={e => onChangeTwo(e.target.value)} />
+        <TextareaAutosize value={codex} placeholder4={codex} style={myComponentStyleSix} name="Instructions" placeholder='AI Generative Output' onChange={e => onChangeTwo(e.target.value)} />
         </div>
         </div>
       </body>
