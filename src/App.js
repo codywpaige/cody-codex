@@ -4,8 +4,10 @@ import RenderedResponse from './components/renderedResponse';
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import CompletionsResponse from './components/completionsResponse';
+import * as _ from 'lodash' ;
 
 let App = () => {
+  let randomElement = _.sample([<RenderedResponse />, <CompletionsResponse />]);
   const rootElement = document.getElementById("root");
   const root = createRoot(rootElement);
 
@@ -14,7 +16,7 @@ let App = () => {
       <Routes>
         <Route path="/explain-like-five" element={<CompletionsResponse />}></Route>
         <Route path="/content-writer" element={<RenderedResponse />}></Route>
-        <Route path="/" element={<CompletionsResponse />}></Route>
+        <Route path="/" element={randomElement}></Route>
       </Routes>
     </BrowserRouter>
   );

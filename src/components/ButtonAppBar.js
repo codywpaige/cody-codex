@@ -53,11 +53,13 @@ export default function ButtonAppBar() {
   const navToWriter = () => {
     // get the current slug, and create a variable to save it to
     // if the current url contains the string explain, then navigate to the writer page
-    if (window.location.href.includes("explain")) {
+    if (window.location.href.includes("explain-like-five")) {
     window.location.href = "/content-writer";
-  } else {
+  } 
+  if (window.location.href.includes("content-writer")) {
     // if the current url contains the string writer, then navigate to the explain page
     window.location.href = "/explain-like-five";
+
   }
   }
   return (
