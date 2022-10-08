@@ -10,7 +10,6 @@ let App = () => {
   let randomElement = _.sample([<RenderedResponse />, <CompletionsResponse />]);
   const rootElement = document.getElementById("root");
   const root = createRoot(rootElement);
-
   root.render(
     <BrowserRouter>
       <Routes>
@@ -23,7 +22,3 @@ let App = () => {
 };
 
 export default App;
-
-// npm install globally yarn
-
-// yarn install

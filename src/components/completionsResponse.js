@@ -6,8 +6,24 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { TextareaAutosize } from '@mui/material';
 import ButtonAppBar from './ButtonAppBar';
+import { useNavigate } from 'react-router-dom';
 
 let CompletionsResponse = () => {
+    const navigate = useNavigate();
+
+    const navToWriter = () => {
+        // if the current route matches the explain-like-five route, then render the renderedResponse component
+        if (window.location.href === "http://main--charming-gelato-34ef5b.netlify.app/content-writer") {
+            // navigate to the writer page by rendering its component
+            // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
+            navigate("/explain-like-five");
+        } 
+        if (window.location.href === "http://localhost:3000/explain-like-five") {
+            // navigate to the writer page by rendering its component
+            // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
+            navigate("/content-writer");
+        }
+    }
 
     // create a usestate var called test that captures the value of the input wtext
     const [text, setText] = React.useState([]);
@@ -69,6 +85,7 @@ let CompletionsResponse = () => {
         'height': '100%',
         'width': '100%',
     }
+    
 
     let submitCodexCall = () => {
         fetch('https://api.openai.com/v1/completions', {
@@ -96,7 +113,7 @@ let CompletionsResponse = () => {
 
     return (
         <div className='pink'>
-        <ButtonAppBar />
+        <ButtonAppBar onClick={navToWriter} />
             <div style={myComponentStyleSeven} className='pink'>
                 <div className="paragraph-text">
                     <h3 style={myComponentStyleFive}>Explain To Me Like I'm Five</h3>

@@ -9,8 +9,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function ButtonAppBar() {
+  const navigate = useNavigate();
 
   // set state hook for the usefeffect
   const [drop, setDrop] = useState(1);
@@ -20,7 +22,7 @@ export default function ButtonAppBar() {
     let dropDownTitle = window.location.href.includes("content-writer") ? "Writers: Generate Content" : "Explain to me like I am 5";
     setDrop(dropDownTitle);
     console.log(dropDownTitle);
-   }, []);
+  }, []);
 
   const [values, setValues] = React.useState([
     "Writers: Generate Content",
@@ -52,16 +54,23 @@ export default function ButtonAppBar() {
   // create a function called navToWriter that will navigate to the writer page
   const navToWriter = () => {
     // get the current slug, and create a variable to save it to
-    // if the current url contains the string explain, then navigate to the writer page
+    // if the current url contains the string explain, then navigate to the writer page by rendering its component
+    // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
+    // if the current url matches https://main--charming-gelato-34ef5b.netlify.app/ exactly then
+    // navigate to the writer page by rendering its component
+    // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
+    if (window.location.href === `https://main--charming-gelato-34ef5b.netlify.app/`) {
+      navigate("/content-writer");
+    }
     if (window.location.href.includes("explain-like-five")) {
-    window.location.href = "/content-writer";
-  } 
-  if (window.location.href.includes("content-writer")) {
-    // if the current url contains the string writer, then navigate to the explain page
-    window.location.href = "/explain-like-five";
+      navigate("/content-writer");
+    }
+    if (window.location.href.includes("content-writer")) {
+      // if the current url contains the string writer, then navigate to the explain page
+      navigate("/explain-like-five");
+    }
+  }
 
-  }
-  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -83,7 +92,7 @@ export default function ButtonAppBar() {
             </Select>
           </div>
           <div className='parent' style={flexClass}>
-          {"Cody's Compendium of Codexes"}
+            {"Cody's Compendium of Codexes"}
           </div>
         </Typography>
       </AppBar>
