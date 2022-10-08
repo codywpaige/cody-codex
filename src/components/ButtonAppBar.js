@@ -11,17 +11,18 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(navToWriter) {
   const navigate = useNavigate();
 
   // set state hook for the usefeffect
   const [drop, setDrop] = useState(1);
 
-  useEffect(() => {
+  useEffect((navToWriter) => {
     var currentSlugs = window.location.href;
     let dropDownTitle = window.location.href.includes("content-writer") ? "Writers: Generate Content" : "Explain to me like I am 5";
     setDrop(dropDownTitle);
-    console.log(dropDownTitle);
+    console.log(navToWriter);
+
   }, []);
 
   const [values, setValues] = React.useState([
@@ -47,30 +48,6 @@ export default function ButtonAppBar() {
     'padding-bottom': '15px',
   }
 
-  // if content is in the url then set a new var called dropDownTitle
-  // to the content of the url
-  // if not then set it to the default value of "Explain to me like I am 5"
-
-  // create a function called navToWriter that will navigate to the writer page
-  const navToWriter = () => {
-    // get the current slug, and create a variable to save it to
-    // if the current url contains the string explain, then navigate to the writer page by rendering its component
-    // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
-    // if the current url matches https://main--charming-gelato-34ef5b.netlify.app/ exactly then
-    // navigate to the writer page by rendering its component
-    // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
-    if (window.location.href === `https://main--charming-gelato-34ef5b.netlify.app/`) {
-      navigate("/content-writer");
-    }
-    if (window.location.href.includes("explain-like-five")) {
-      navigate("/content-writer");
-    }
-    if (window.location.href.includes("content-writer")) {
-      // if the current url contains the string writer, then navigate to the explain page
-      navigate("/explain-like-five");
-    }
-  }
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -86,8 +63,7 @@ export default function ButtonAppBar() {
               }}
             >
               {values.map((value, index) => {
-                return <MenuItem style={styledButton} onClick={navToWriter} value="Drop Down">{value}</MenuItem>;
-              }
+                return <MenuItem href="https://main--charming-gelato-34ef5b.netlify.app/content-writer" style={styledButton} onClick={navToWriter} value="Drop Down">{value}</MenuItem>              }
               )}
             </Select>
           </div>

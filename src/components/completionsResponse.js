@@ -9,21 +9,25 @@ import ButtonAppBar from './ButtonAppBar';
 import { useNavigate } from 'react-router-dom';
 
 let CompletionsResponse = () => {
+
     const navigate = useNavigate();
 
     const navToWriter = () => {
         // if the current route matches the explain-like-five route, then render the renderedResponse component
-        if (window.location.href === "https://main--charming-gelato-34ef5b.netlify.app/explain-like-five") {
+        if (!window.location.href === "https://main--charming-gelato-34ef5b.netlify.app/content-writer") {
             // navigate to the writer page by rendering its component
             // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
-            navigate("/content-writer");
+            window.location.href = "https://main--charming-gelato-34ef5b.netlify.app/explain-like-five";
         } 
-        if (window.location.href === "http://main--charming-gelato-34ef5b.netlify.app/content-writer") {
+
+        if (!window.location.href === "https://main--charming-gelato-34ef5b.netlify.app/explain-like-five") {
             // navigate to the writer page by rendering its component
             // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
-            navigate("/explain-like-five");
+            window.location.href = "https://main--charming-gelato-34ef5b.netlify.app/content-writer";
         }
+        return navToWriter;
     }
+      
 
     // create a usestate var called test that captures the value of the input wtext
     const [text, setText] = React.useState([]);
@@ -113,7 +117,7 @@ let CompletionsResponse = () => {
 
     return (
         <div className='pink'>
-        <ButtonAppBar onClick={navToWriter} />
+        <ButtonAppBar navToWriter={navToWriter} />
             <div style={myComponentStyleSeven} className='pink'>
                 <div className="paragraph-text">
                     <h3 style={myComponentStyleFive}>Explain To Me Like I'm Five</h3>
