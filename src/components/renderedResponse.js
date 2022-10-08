@@ -21,18 +21,11 @@ function RenderedResponse() {
 
   const navToWriter = () => {
     // if the current route matches the explain-like-five route, then render the renderedResponse component
-    if (!window.location.href === "https://main--charming-gelato-34ef5b.netlify.app/content-writer") {
+    if (!window.location.href === "https://main--charming-gelato-34ef5b.netlify.app/index.html#content-writer") {
         // navigate to the writer page by rendering its component
         // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
-        window.location.href = "https://main--charming-gelato-34ef5b.netlify.app/explain-like-five";
+        window.location.href = "https://main--charming-gelato-34ef5b.netlify.app/index.html#explain-like-five";
     } 
-
-    if (!window.location.href === "https://main--charming-gelato-34ef5b.netlify.app/explain-like-five") {
-        // navigate to the writer page by rendering its component
-        // USING REACT ROUTER, ROUTE TO CONTENT-WRITER
-        window.location.href = "https://main--charming-gelato-34ef5b.netlify.app/content-writer";
-    }
-    return navToWriter;
 }
   
   function getNewTodo() {
@@ -134,7 +127,7 @@ function RenderedResponse() {
   return (
     <div>
       <body>
-      <ButtonAppBar navToWriter={navToWriter} />
+      <ButtonAppBar onClick={navToWriter} />
         <div className="paragraph-text">
           <h3 style={myComponentStyleFive}>Writers: Generate Content</h3>
           <p style={myComponentStyleFour}>Essentially, you can provide any amount (small or large) of text as a writer, and the second box is where you give instructions to AI in regards to the direction, tone, wordiness, length, content etc. and it will output a piece of work for you!</p>

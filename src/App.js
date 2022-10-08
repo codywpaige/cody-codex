@@ -1,22 +1,24 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Routes ,Route} from 'react-router-dom';
+// import the component renderedResponse.js
+import RenderedResponse from './components/renderedResponse';
 import { createRoot } from "react-dom/client";
-import RenderedResponse from "./components/renderedResponse";
-import CompletionsResponse from "./components/completionsResponse";
-import * as _ from "lodash";
+import { BrowserRouter } from "react-router-dom";
+import CompletionsResponse from './components/completionsResponse';
+import * as _ from 'lodash' ;
+import { HashRouter, Switch } from 'react-router-dom'
 
 let App = () => {
+  let randomElement = _.sample([<RenderedResponse />, <CompletionsResponse />]);
   const rootElement = document.getElementById("root");
   const root = createRoot(rootElement);
-  let randomElement = _.sample([<RenderedResponse />, <CompletionsResponse />]);
   root.render(
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/explain-like-five" element={<CompletionsResponse/>}></Route>
         <Route path="/content-writer" element={<RenderedResponse/>}></Route>
         <Route path="/" element={randomElement}></Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
