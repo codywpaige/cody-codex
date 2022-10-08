@@ -12,8 +12,8 @@ let App = () => {
   root.render(
     <BrowserRouter>
       <Routes>
-        <Route path="/completions-response" element={<CompletionsResponse />}></Route>
-        <Route path="/rendered-response" element={<RenderedResponse />}></Route>
+        <Route path="/explain-like-five" element={<CompletionsResponse />}></Route>
+        <Route path="/content-writer" element={<RenderedResponse />}></Route>
         <Route path="/" element={<CompletionsResponse />}></Route>
       </Routes>
     </BrowserRouter>
