@@ -110,7 +110,6 @@ let CompletionsResponse = () => {
 
     return (
         <div className='pink'>
-      <ButtonAppBar onClick={navToWriter} />
             <div style={myComponentStyleSeven} className='pink'>
                 <div className="paragraph-text">
                     <h3 style={myComponentStyleFive}>Explain To Me Like I'm Five</h3>

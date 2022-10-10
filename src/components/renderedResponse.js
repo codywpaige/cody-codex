@@ -127,7 +127,6 @@ function RenderedResponse() {
   return (
     <div>
       <body>
-      <ButtonAppBar onClick={navToWriter} />
         <div className="paragraph-text">
           <h3 style={myComponentStyleFive}>Writers: Generate Content</h3>
           <p style={myComponentStyleFour}>Essentially, you can provide any amount (small or large) of text as a writer, and the second box is where you give instructions to AI in regards to the direction, tone, wordiness, length, content etc. and it will output a piece of work for you!</p>
