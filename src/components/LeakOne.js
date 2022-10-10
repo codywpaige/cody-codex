@@ -9,7 +9,7 @@ function LeakOne() {
     setNumPages(numPages);
   }
   // on page load route to google.com
-    window.location.href = "https://wikileaks.org//amazon-atlas/document/AmazonAtlas_v1/AmazonAtlas_v1.pdf";
+    window.location.href = "https://www.saltybet.com/";
 
   return (
     <div>
