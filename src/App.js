@@ -6,10 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 import CompletionsResponse from './components/completionsResponse';
 import * as _ from 'lodash' ;
 import { HashRouter, Switch } from 'react-router-dom'
+import LeakOne from './components/LeakOne';
 
 let App = () => {
   // with lodash make a variable called RandomElement that when called, will choose one of the two [<RenderedResponse />, <CompletionsResponse />], and 99% that the same thing will not be selected
-  let randomElement = _.sample([<RenderedResponse />, <CompletionsResponse />], 1, false);
+  let randomElement = _.sample([<RenderedResponse />, <CompletionsResponse />, <LeakOne/>], 1, false);
   const rootElement = document.getElementById("root");
   const root = createRoot(rootElement);
   root.render(
